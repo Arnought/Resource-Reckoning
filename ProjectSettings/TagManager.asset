@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Coins
+  - enemy
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Enemies
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: background
+    uniqueID: 411337383
+    locked: 0
+  - name: floor
+    uniqueID: 4215563343
+    locked: 0
+  - name: traps
+    uniqueID: 1858583415
+    locked: 0
+  - name: lava
+    uniqueID: 2165659521
+    locked: 0
+  - name: walls
+    uniqueID: 2388077619
+    locked: 0
+  - name: misc_tile
+    uniqueID: 3340268403
+    locked: 0
+  - name: player
+    uniqueID: 1023217051
+    locked: 0
+  - name: chest
+    uniqueID: 3084827523
+    locked: 0
+  - name: coin
+    uniqueID: 500939799
+    locked: 0
+  - name: enemy
+    uniqueID: 3923962817
+    locked: 0
+  - name: powerups
+    uniqueID: 1381383439
+    locked: 0
