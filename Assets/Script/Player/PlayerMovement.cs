@@ -6,15 +6,16 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float speed;
-    Vector3 move;
+    public Camera cam;
+    Vector2 mousePos;
+    Vector2 move;
     Rigidbody2D rgbd2d;
-
     Animate animate;
 
     private void Awake()
     {
         rgbd2d = GetComponent<Rigidbody2D>();
-        move = new Vector3();
+        move = new Vector2();
         animate = GetComponent<Animate>();
     }
 
@@ -29,6 +30,17 @@ public class PlayerMovement : MonoBehaviour
         move *= speed;
         rgbd2d.velocity = move;
 
+        /*mousePos = cam.ScreenToWorldPoint(Input.mousePosition);*/
+
+    }
+
+    void FixedUpdate()
+    {
+        /*rgbd2d.MovePosition(rgbd2d.position + move * speed * Time.fixedDeltaTime);
+        Vector3 lookDirection = mousePos - rgbd2d.position;
+
+        float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
+        rgbd2d.rotation = angle;*/
     }
 
     public void Kill()

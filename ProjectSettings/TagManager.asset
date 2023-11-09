@@ -52,11 +52,20 @@ TagManager:
   - name: traps
     uniqueID: 1858583415
     locked: 0
+  - name: barrel
+    uniqueID: 3002542799
+    locked: 0
   - name: lava
     uniqueID: 2165659521
     locked: 0
   - name: walls
     uniqueID: 2388077619
+    locked: 0
+  - name: misc_tile 3
+    uniqueID: 4145634291
+    locked: 0
+  - name: mis_tile 2
+    uniqueID: 46724429
     locked: 0
   - name: misc_tile
     uniqueID: 3340268403
