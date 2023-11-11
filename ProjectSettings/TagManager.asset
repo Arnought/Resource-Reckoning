@@ -4,8 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Coins
+  - spd_pwr
   - enemy
+  - Coins
+  - health_pwr
+  - Barrel
   layers:
   - Default
   - TransparentFX
@@ -44,44 +47,32 @@ TagManager:
     uniqueID: 0
     locked: 0
   - name: background
-    uniqueID: 411337383
+    uniqueID: 2823885713
     locked: 0
   - name: floor
-    uniqueID: 4215563343
-    locked: 0
-  - name: traps
-    uniqueID: 1858583415
-    locked: 0
-  - name: barrel
-    uniqueID: 3002542799
-    locked: 0
-  - name: lava
-    uniqueID: 2165659521
+    uniqueID: 309326959
     locked: 0
   - name: walls
-    uniqueID: 2388077619
+    uniqueID: 115679151
     locked: 0
-  - name: misc_tile 3
-    uniqueID: 4145634291
+  - name: Barrel
+    uniqueID: 4116811865
     locked: 0
-  - name: mis_tile 2
-    uniqueID: 46724429
+  - name: misc
+    uniqueID: 1543579467
     locked: 0
-  - name: misc_tile
-    uniqueID: 3340268403
+  - name: misc(no collision) 2
+    uniqueID: 4234761001
+    locked: 0
+  - name: misc(no collision)
+    uniqueID: 1235805399
+    locked: 0
+  - name: misc(no collision) 3
+    uniqueID: 2344687751
     locked: 0
   - name: player
-    uniqueID: 1023217051
-    locked: 0
-  - name: chest
-    uniqueID: 3084827523
-    locked: 0
-  - name: coin
-    uniqueID: 500939799
+    uniqueID: 2584795011
     locked: 0
   - name: enemy
-    uniqueID: 3923962817
-    locked: 0
-  - name: powerups
-    uniqueID: 1381383439
+    uniqueID: 3748488357
     locked: 0
