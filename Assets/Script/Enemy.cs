@@ -7,32 +7,83 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private float moveSpd;
     [SerializeField] private Transform target;
-    GameObject targetGameObject;
-    Rigidbody2D rgbd2d;
+    private Rigidbody2D rgbd2d;
+    [SerializeField] private int damage = 8;
+
+    private bool isPlayerInRange = false;
+    public float damageInterval = 1f; // Time interval between each damage tick.
+    private float damageTimer = 0f;
+
+    private HealthBar healthBar; // Reference to the HealthBar.
+
     void Awake()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
-        targetGameObject = target.gameObject;
         rgbd2d = GetComponent<Rigidbody2D>();
+
+        // Find the HealthBar in the scene or instantiate it if necessary.
+        healthBar = FindObjectOfType<HealthBar>();
+
+        if (healthBar == null)
+        {
+            Debug.LogError("HealthBar not found. Make sure it's present in the scene.");
+        }
     }
 
-   void FixedUpdate()
+    void FixedUpdate()
     {
-        
         Vector3 direction = (target.position - transform.position).normalized;
         rgbd2d.velocity = direction * moveSpd;
+
+        if (isPlayerInRange)
+        {
+            damageTimer -= Time.fixedDeltaTime;
+
+            if (damageTimer <= 0f)
+            {
+                // Time to deal damage again.
+                DealContinuousDamage();
+                damageTimer = damageInterval; // Reset the timer.
+            }
+        }
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject == targetGameObject)
+        if (other.CompareTag("Player"))
         {
-            Attack();
+            isPlayerInRange = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            isPlayerInRange = false;
+        }
+    }
+
+    private void DealContinuousDamage()
+    {
+        PlayerResource playerHealth = target.GetComponent<PlayerResource>();
+
+        if (playerHealth != null)
+        {
+            playerHealth.TakeDamage(damage);
+
+            // Update the health bar using the SetHealth method.
+            if (healthBar != null)
+            {
+                healthBar.SetHealth(playerHealth.currentHealth);
+            }
+
+            Attack(); // Call the Attack function when the enemy successfully hits the player.
         }
     }
 
     private void Attack()
     {
-        Debug.Log("HIT!");
+        Debug.Log("Enemy dealt " + damage + " damage to the player!");
     }
 }

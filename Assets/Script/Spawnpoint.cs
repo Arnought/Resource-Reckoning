@@ -21,7 +21,7 @@ public class Spawnpoint : MonoBehaviour
             Instantiate(enemy, pos.position, Quaternion.identity);
 
             spawnCount = (spawnCount + 1) % spawn.Length;
-            yield return new WaitForSeconds(2.0f);
+            yield return new WaitForSeconds(4.0f);
         }
     }
 }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -5802522657252088477}
   - component: {fileID: 5962014299531155845}
   - component: {fileID: 7202458370461984593}
+  - component: {fileID: -3405400697123013816}
   m_Layer: 6
   m_Name: enemy
   m_TagString: enemy
@@ -55,7 +56,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -546478939
-  m_SortingLayer: 10
+  m_SortingLayer: 11
   m_SortingOrder: 0
   m_Sprite: {fileID: 1161977690, guid: 35c45942df0eb2147b3f49429f111e1a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -120,8 +121,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dc8dfd8c5108164dab4854dbd7ed900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpd: 1.5
+  moveSpd: 0.9
   target: {fileID: 4898096694931565555, guid: 392b173f4ced76e408ae5bc1d7d8cb95, type: 3}
+  damage: 8
+  damageInterval: 1
 --- !u!61 &7202458370461984593
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -148,3 +151,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.43204737, y: 0.54816246}
   m_EdgeRadius: 0
+--- !u!114 &-3405400697123013816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356018326143125657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a4db74394730434db6741cee9531400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 15

@@ -7,7 +7,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float speed;
-    /*public Camera cam;*/
+    public Camera cam;
     Vector2 mousePos;
     Vector2 move;
     Rigidbody2D rgbd2d;
@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
         rgbd2d.velocity = move;
 
 
-        /*mousePos = cam.ScreenToWorldPoint(Input.mousePosition);*/
+        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 
     }
 
