@@ -5,24 +5,44 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public bool isEnd = false;
-    [SerializeField] private GameObject gameOver;
     public static GameManager Instance;
 
+    [Header("Game Over UI")]
+    public bool isEnd = false;
+    [SerializeField] private GameObject gameOver;
+
+    [Header("Timer UI")]
     public Text timerText;
     private float startTime;
+
+    public PlayerResource player;
 
 
     private void Awake()
     {
         startTime = Time.time;
         Instance = this;
+
+        if(gameOver != null)
+        {
+            gameOver.SetActive(false);
+        }
+
+        if(player == null)
+        {
+            Debug.LogError("Player reference not set in the Game Over");
+        }
     }
 
     private void Update()
     {
         float elapsedTime = Time.time - startTime;
         UpdateTimerText(elapsedTime);
+
+        if(player != null && player.currentHealth <= 0)
+        {
+            ShowGameOver();
+        }
     }
 
     void UpdateTimerText(float time)
@@ -33,13 +53,12 @@ public class GameManager : MonoBehaviour
         timerText.text = string.Format("{0:00}: {1:00}", minutes, seconds);
     }
 
-    public void Gamestatus(bool status)
+    public void ShowGameOver()
     {
-        isEnd = status;
-
-        gameOver.SetActive(status);
-
-        Time.timeScale = 0;
+        if (gameOver != null)
+        {
+            gameOver.SetActive(true);
+        }
         
     }
 }
