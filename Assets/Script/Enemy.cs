@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float moveSpd;
     [SerializeField] private Transform target;
     private Rigidbody2D rgbd2d;
-    [SerializeField] private int damage = 8;
+    [SerializeField] private int damage = 10;
 
     private bool isPlayerInRange = false;
     public float damageInterval = 1f; // Time interval between each damage tick.
