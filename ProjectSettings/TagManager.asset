@@ -72,6 +72,9 @@ TagManager:
   - name: misc(no collision) 3
     uniqueID: 2344687751
     locked: 0
+  - name: extraction point
+    uniqueID: 736971115
+    locked: 0
   - name: bullet
     uniqueID: 3973836317
     locked: 0

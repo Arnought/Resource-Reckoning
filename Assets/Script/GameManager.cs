@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
     public bool isEnd = false;
     [SerializeField] private GameObject gameOver;
 
+    [Header("Quest Complete UI")]
+    [SerializeField] private GameObject questComplete;
+
     [Header("Timer UI")]
     public Text timerText;
     private float startTime;
@@ -31,6 +34,7 @@ public class GameManager : MonoBehaviour
         {
             gameOver.SetActive(false);
         }
+
 
         if(player == null)
         {
