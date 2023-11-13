@@ -26,14 +26,22 @@ public class KillCounter : MonoBehaviour
     private void OnEnable()
     {
         EnemyHealth.OnEnemyDeath += HandleEnemyDeath;
+        BossHealth.OnBossDeath += HandleBossDeath;
     }
 
     private void OnDisable()
     {
         EnemyHealth.OnEnemyDeath -= HandleEnemyDeath;
+        BossHealth.OnBossDeath -= HandleBossDeath;
     }
 
     void HandleEnemyDeath()
+    {
+        killCount++;
+        UpdateKillCountText();
+    }
+
+    void HandleBossDeath()
     {
         killCount++;
         UpdateKillCountText();

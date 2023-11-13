@@ -10,6 +10,7 @@ TagManager:
   - health_pwr
   - Barrel
   - Wall
+  - boss
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - Water
   - UI
   - Enemies
-  - 
+  - Boss
   - 
   - 
   - 
@@ -76,6 +77,9 @@ TagManager:
     locked: 0
   - name: player
     uniqueID: 2584795011
+    locked: 0
+  - name: boss
+    uniqueID: 2792218081
     locked: 0
   - name: enemy
     uniqueID: 3748488357
