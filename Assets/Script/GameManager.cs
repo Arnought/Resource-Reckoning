@@ -17,6 +17,10 @@ public class GameManager : MonoBehaviour
 
     public PlayerResource player;
 
+    public Enemy[] enemies;
+
+    private bool isGamePaused = false;
+
 
     private void Awake()
     {
@@ -32,6 +36,11 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogError("Player reference not set in the Game Over");
         }
+
+        if(enemies == null || enemies.Length == 0)
+        {
+            Debug.LogError("Enemy references not set in the GameOverManager");
+        }
     }
 
     private void Update()
@@ -41,7 +50,11 @@ public class GameManager : MonoBehaviour
 
         if(player != null && player.currentHealth <= 0)
         {
-            ShowGameOver();
+            if(!isGamePaused)
+            {
+                ShowGameOver();
+                PauseGame();
+            }
         }
     }
 
@@ -59,6 +72,23 @@ public class GameManager : MonoBehaviour
         {
             gameOver.SetActive(true);
         }
-        
+    }
+
+    void PauseGame()
+    {
+        Time.timeScale = 0f;
+        isGamePaused = true;
+
+        Enemy[] enemies = FindObjectsOfType<Enemy>();
+
+        foreach (Enemy enemy in enemies)
+        {
+            enemy.enabled = false;
+        }
+
+        if (timerText != null)
+        {
+            timerText.enabled = false;
+        }
     }
 }

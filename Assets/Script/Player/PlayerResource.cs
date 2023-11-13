@@ -7,13 +7,22 @@ public class PlayerResource : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth;
+    public int killCount = 0;
 
     public HealthBar healthBar;
+    public Text killCountText;
 
     void Start()
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+
+        if(killCountText == null)
+        {
+            Debug.LogError("killCountText reference not set in the PlayerResource script.");
+        }
+
+        UpdateKillCountText();
     }
 
 
@@ -25,6 +34,20 @@ public class PlayerResource : MonoBehaviour
         if (currentHealth <= 0)
         {
             Debug.Log("Player has been Defeated");
+        }
+    }
+
+    public void IncreaseKillCount()
+    {
+        killCount++;
+        UpdateKillCountText();
+    }
+
+    void UpdateKillCountText()
+    {
+        if(killCountText != null)
+        {
+            killCountText.text = "Kills: " + killCount.ToString();
         }
     }
 }
