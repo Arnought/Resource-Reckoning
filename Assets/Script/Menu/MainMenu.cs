@@ -7,9 +7,9 @@ using TMPro;
 
 public class MainMenu : MonoBehaviour
 {
-/*     [SerializeField] private Slider volumeSlider = null;
+     [SerializeField] private Slider volumeSlider = null;
 
-     public TextMeshProUGUI volumeTextUI = null;*/
+     public TextMeshProUGUI volumeTextUI = null;
 
     public void Start()
     {
@@ -21,7 +21,7 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-/*    public void VolumeSlider(float volume)
+   public void VolumeSlider(float volume)
     {
         volumeTextUI.text = volume.ToString("0.0");
     }
@@ -38,7 +38,7 @@ public class MainMenu : MonoBehaviour
         float volumeValue = PlayerPrefs.GetFloat("VolumeValue");
         volumeSlider.value = volumeValue;
         AudioListener.volume = volumeValue;
-    }*/
+    }
 
 
 

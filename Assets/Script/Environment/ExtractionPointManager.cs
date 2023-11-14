@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ExtractionPointManager : MonoBehaviour
 {
@@ -104,5 +105,10 @@ public class ExtractionPointManager : MonoBehaviour
             questCompleteUI.SetActive(true);
             Time.timeScale = 0f;
         }
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
