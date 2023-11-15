@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -6543525898069931701}
   - component: {fileID: 5761985196603392256}
   - component: {fileID: 3022838344382450806}
+  - component: {fileID: 1413832643}
   m_Layer: 7
   m_Name: Boss
   m_TagString: boss
@@ -75,9 +76,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1502749215
-  m_SortingLayer: 11
+  m_SortingLayer: 12
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1450458825, guid: 08b6ebabfc565d94487ac6ee4efe218f, type: 3}
+  m_Sprite: {fileID: -94149602, guid: c1515f8bec4e0e64c851ecf9a47f181f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -155,3 +156,23 @@ MonoBehaviour:
   target: {fileID: 4898096694931565555, guid: 392b173f4ced76e408ae5bc1d7d8cb95, type: 3}
   damage: 15
   damageInterval: 1
+--- !u!95 &1413832643
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041952212473041902}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f7545f8b1d25c8844bd548896f208c4c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

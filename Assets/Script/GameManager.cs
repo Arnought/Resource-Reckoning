@@ -95,4 +95,10 @@ public class GameManager : MonoBehaviour
             timerText.enabled = false;
         }
     }
+
+    public void Quit()
+    {
+        Debug.Log("You leave the game");
+        Application.Quit();
+    }
 }

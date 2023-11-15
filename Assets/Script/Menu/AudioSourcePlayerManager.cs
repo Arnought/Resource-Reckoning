@@ -8,6 +8,7 @@ public class AudioSourcePlayerManager : MonoBehaviour
     public AudioClip mainMenuBGM;
     public AudioClip howToPlayBGM;
     public AudioClip gameBGM;
+    public AudioClip questCompleteBGM;
 
     private static AudioSourcePlayerManager instance = null;
     private AudioSource audio;
@@ -48,6 +49,11 @@ public class AudioSourcePlayerManager : MonoBehaviour
         else if (SceneManager.GetActiveScene().name == "GameScene" && audio.clip != gameBGM)
         {
             audio.clip = gameBGM;
+            PlaySceneBGM();
+        }
+        else if (SceneManager.GetActiveScene().name == "Quest Complete" && audio.clip != questCompleteBGM)
+        {
+            audio.clip = questCompleteBGM;
             PlaySceneBGM();
         }
     }

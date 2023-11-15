@@ -16,8 +16,10 @@ public class Enemy : MonoBehaviour
 
     private HealthBar healthBar; // Reference to the HealthBar.
 
+    private Animator animator;
     void Awake()
     {
+        animator = GetComponent<Animator>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
         rgbd2d = GetComponent<Rigidbody2D>();
 
@@ -33,7 +35,12 @@ public class Enemy : MonoBehaviour
     void FixedUpdate()
     {
         Vector3 direction = (target.position - transform.position).normalized;
+
+        // Move towards the player
         rgbd2d.velocity = direction * moveSpd;
+
+        // Set the Direction parameter for the Blend Tree
+        animator.SetFloat("Direction", direction.x);
 
         if (isPlayerInRange)
         {
@@ -46,6 +53,7 @@ public class Enemy : MonoBehaviour
                 damageTimer = damageInterval; // Reset the timer.
             }
         }
+
     }
 
 
