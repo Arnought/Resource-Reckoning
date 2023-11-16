@@ -8,18 +8,11 @@ public class KillCounter : MonoBehaviour
     public Text killCountText;
     private int killCount = 0;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     void UpdateKillCountText()
     {
         if (killCountText != null)
         {
-            killCountText.text = "Kills: " + killCount.ToString();
+            killCountText.text = "Kill: " + killCount.ToString();
         }
     }
 

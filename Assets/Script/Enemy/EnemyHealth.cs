@@ -22,10 +22,8 @@ public class EnemyHealth : MonoBehaviour
     {
         currentHealth -= damage;
 
-        // Check if the enemy's health is zero or below.
         if (currentHealth <= 0)
         {
-            // Perform any additional actions when the enemy is defeated.
             Die();
         }
     }

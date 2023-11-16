@@ -4,18 +4,17 @@ using UnityEngine;
 
 public class ExtractionPoint : MonoBehaviour
 {
-    [SerializeField] private bool isPlayerInside = false;
+    /*[SerializeField] private bool isPlayerInside = false;
     public GameObject questCompleteUI;
     public float countdownTime = 3f;
 
-    public Transform extractionPointLocation; // Reference to the location where the extraction point should appear.
+    public Transform extractionPointLocation;
 
-    private Barrel_Counter barrelCounter; // Reference to the Barrel_Counter script.
-    private bool hasActivated = false; // To ensure the extraction point activates only once.
+    private Barrel_Counter barrelCounter; 
+    private bool hasActivated = false; 
 
     void Start()
     {
-        // Find the Barrel_Counter script in the scene.
         barrelCounter = FindObjectOfType<Barrel_Counter>();
 
         if (barrelCounter == null)
@@ -23,21 +22,18 @@ public class ExtractionPoint : MonoBehaviour
             Debug.LogError("Barrel_Counter script not found in the scene.");
         }
 
-        // Initially hide the extraction point.
         gameObject.SetActive(false);
     }
 
     void Update()
     {
-        // Check if the player has collected all 10 barrels.
         if (barrelCounter != null && barrelCounter.barrelPoint == 10 && extractionPointLocation != null && !hasActivated)
         {
-            // Activate the extraction point and set its position.
             transform.position = extractionPointLocation.position;
             transform.rotation = extractionPointLocation.rotation;
             gameObject.SetActive(true);
 
-            hasActivated = true; // Set to true to ensure it activates only once.
+            hasActivated = true;
 
             StartCoroutine(StartCountdown());
         }
@@ -67,29 +63,24 @@ public class ExtractionPoint : MonoBehaviour
     {
         yield return new WaitForSeconds(countdownTime);
 
-        // Show the Quest Complete UI.
         if (questCompleteUI != null)
         {
             questCompleteUI.SetActive(true);
 
-            // Pause the game.
             Time.timeScale = 0f;
 
-            // Disable player movement (replace "PlayerMovementScript" with the actual script name).
             PlayerMovement playerMovement = FindObjectOfType<PlayerMovement>();
             if (playerMovement != null)
             {
                 playerMovement.enabled = false;
             }
 
-            // Stop enemy movement and spawning (replace "EnemyScript" with the actual script name).
             Enemy[] enemies = FindObjectsOfType<Enemy>();
             foreach (Enemy enemy in enemies)
             {
                 enemy.enabled = false;
             }
 
-            // Stop boss movement and spawning (replace "BossScript" with the actual script name).
             Boss boss = FindObjectOfType<Boss>();
             if (boss != null)
             {
@@ -100,5 +91,79 @@ public class ExtractionPoint : MonoBehaviour
         {
             Debug.LogError("Quest Complete UI is not assigned in the inspector.");
         }
+    }*/
+
+    /*public GameObject extractionPoint;
+    public Transform extractionPointLocation;
+    public GameObject questCompleteUI;
+
+    private Barrel_Counter barrelCounter;
+    private bool isPlayerInside = false;
+    private bool hasSpawnedExtractionPoint = false;
+
+    void Start()
+    {
+        barrelCounter = FindObjectOfType<Barrel_Counter>();
+
+        if (barrelCounter == null)
+        {
+            Debug.LogError("Barrel_Counter script not found in the scene.");
+        }
+
+        if (questCompleteUI != null)
+        {
+            questCompleteUI.SetActive(false);
+        }
+
+        if (extractionPoint == null)
+        {
+            Debug.LogError("Extraction point object not assigned in the inspector.");
+        }
+        else
+        {
+            extractionPoint.SetActive(false); // Initially hide the extraction point.
+        }
     }
+
+    void Update()
+    {
+        // Check if the player has collected all 10 barrels.
+        if (barrelCounter != null && barrelCounter.barrelPoint == 10 && extractionPointLocation != null && !hasSpawnedExtractionPoint)
+        {
+            // Make the extraction point visible and set its position.
+            extractionPoint.SetActive(true);
+            extractionPoint.transform.position = extractionPointLocation.position;
+            extractionPoint.transform.rotation = extractionPointLocation.rotation;
+
+            hasSpawnedExtractionPoint = true;
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("Player entered extraction point trigger");
+            isPlayerInside = true;
+            QuestComplete();
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("Player exited extraction point trigger");
+            isPlayerInside = false;
+        }
+    }
+
+    void QuestComplete()
+    {
+        Debug.Log("Quest Complete function called");
+        if (questCompleteUI != null && isPlayerInside)
+        {
+            questCompleteUI.SetActive(true);
+        }
+    }*/
 }

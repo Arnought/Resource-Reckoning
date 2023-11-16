@@ -11,6 +11,7 @@ TagManager:
   - Barrel
   - Wall
   - boss
+  - Light
   layers:
   - Default
   - TransparentFX
@@ -57,11 +58,11 @@ TagManager:
   - name: walls
     uniqueID: 115679151
     locked: 0
-  - name: Barrel
-    uniqueID: 4116811865
-    locked: 0
   - name: misc
     uniqueID: 1543579467
+    locked: 0
+  - name: Barrel
+    uniqueID: 4116811865
     locked: 0
   - name: misc(no collision) 2
     uniqueID: 4234761001

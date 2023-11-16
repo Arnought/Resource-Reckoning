@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7df22f10bc6129849bcd0ea43062340f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 200
   currentHealth: 0
 --- !u!114 &3022838344382450806
 MonoBehaviour:
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpd: 1.1
   target: {fileID: 4898096694931565555, guid: 392b173f4ced76e408ae5bc1d7d8cb95, type: 3}
-  damage: 15
+  damage: 20
   damageInterval: 1
 --- !u!95 &1413832643
 Animator:

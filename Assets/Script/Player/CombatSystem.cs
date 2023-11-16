@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class CombatSystem : MonoBehaviour
 {
-    public Transform firePoint; // The position from where the bullet will be instantiated.
-    public GameObject bulletPrefab; // Reference to the bullet prefab.
-    public float bulletSpeed = 10f; // Speed of the bullet.
+    public Transform firePoint;
+    public GameObject bulletPrefab;
+    public float bulletSpeed = 10f;
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) // Check for left mouse button click.
+        if (Input.GetMouseButtonDown(0))
         {
             Shoot();
         }

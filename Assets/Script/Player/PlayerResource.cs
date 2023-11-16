@@ -29,7 +29,7 @@ public class PlayerResource : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        healthBar.SetHealth(currentHealth); // Update the health bar when the player takes damage.
+        healthBar.SetHealth(currentHealth);
 
         if (currentHealth <= 0)
         {

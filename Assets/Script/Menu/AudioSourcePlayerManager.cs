@@ -11,12 +11,12 @@ public class AudioSourcePlayerManager : MonoBehaviour
     public AudioClip questCompleteBGM;
 
     private static AudioSourcePlayerManager instance = null;
-    private AudioSource audio;
+    private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
-        audio = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
         PlaySceneBGM();
     }
 
@@ -35,32 +35,32 @@ public class AudioSourcePlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Check for scene changes
-        if (SceneManager.GetActiveScene().name == "MainMenu" && audio.clip != mainMenuBGM)
+
+        if (SceneManager.GetActiveScene().name == "MainMenu" && audioSource.clip != mainMenuBGM)
         {
-            audio.clip = mainMenuBGM;
+            audioSource.clip = mainMenuBGM;
             PlaySceneBGM();
         }
-        else if (SceneManager.GetActiveScene().name == "HowToPlay" && audio.clip != howToPlayBGM)
+        else if (SceneManager.GetActiveScene().name == "HowToPlay" && audioSource.clip != howToPlayBGM)
         {
-            audio.clip = howToPlayBGM;
+            audioSource.clip = howToPlayBGM;
             PlaySceneBGM();
         }
-        else if (SceneManager.GetActiveScene().name == "GameScene" && audio.clip != gameBGM)
+        else if (SceneManager.GetActiveScene().name == "GameScene" && audioSource.clip != gameBGM)
         {
-            audio.clip = gameBGM;
+            audioSource.clip = gameBGM;
             PlaySceneBGM();
         }
-        else if (SceneManager.GetActiveScene().name == "Quest Complete" && audio.clip != questCompleteBGM)
+        else if (SceneManager.GetActiveScene().name == "Quest Complete" && audioSource.clip != questCompleteBGM)
         {
-            audio.clip = questCompleteBGM;
+            audioSource.clip = questCompleteBGM;
             PlaySceneBGM();
         }
     }
 
     void PlaySceneBGM()
     {
-        audio.Stop();
-        audio.Play();
+        audioSource.Stop();
+        audioSource.Play();
     }
 }
